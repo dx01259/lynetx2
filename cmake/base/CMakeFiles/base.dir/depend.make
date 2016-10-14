@@ -7,10 +7,24 @@ base/CMakeFiles/base.dir/BServerPkg.cpp.o: ../base/BServerPkg.h
 base/CMakeFiles/base.dir/BaseException.cpp.o: ../base/BaseException.cpp
 base/CMakeFiles/base.dir/BaseException.cpp.o: ../base/BaseException.h
 
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: ../base/BaseFunc.cpp
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: ../base/BaseFunc.h
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: ../base/BaseTime.h
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: ../base/config.h
+
+base/CMakeFiles/base.dir/BaseTime.cpp.o: ../base/BaseTime.cpp
+base/CMakeFiles/base.dir/BaseTime.cpp.o: ../base/BaseTime.h
+
+base/CMakeFiles/base.dir/Object.cpp.o: ../base/Object.cpp
+base/CMakeFiles/base.dir/Object.cpp.o: ../base/Object.h
+
 base/CMakeFiles/base.dir/Socket.cpp.o: ../base/BServerPkg.h
 base/CMakeFiles/base.dir/Socket.cpp.o: ../base/BaseException.h
 base/CMakeFiles/base.dir/Socket.cpp.o: ../base/Socket.cpp
 base/CMakeFiles/base.dir/Socket.cpp.o: ../base/Socket.h
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.o: ../base/ThreadPool.cpp
+base/CMakeFiles/base.dir/ThreadPool.cpp.o: ../base/ThreadPool.h
 
 base/CMakeFiles/base.dir/UtilXml.cpp.o: ../open/tinyxml2-4.0.1/tinyxml2.h
 base/CMakeFiles/base.dir/UtilXml.cpp.o: ../base/UtilXml.cpp

@@ -8,3 +8,11 @@ net/CMakeFiles/net.dir/AsyncSocket.cpp.o
  ../base/config.h
  /Users/xudeng/ClionProjects/lynetx/net/AsyncSocket.cpp
  /Users/xudeng/ClionProjects/lynetx/net/AsyncSocket.h
+net/CMakeFiles/net.dir/EpollService.cpp.o
+ ../base/BServerPkg.h
+ ../base/BaseException.h
+ ../base/Socket.h
+ ../base/ThreadPool.h
+ /Users/xudeng/ClionProjects/lynetx/net/AsyncSocket.h
+ /Users/xudeng/ClionProjects/lynetx/net/EpollService.cpp
+ /Users/xudeng/ClionProjects/lynetx/net/EpollService.h

@@ -4,19 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/xudeng/ClionProjects/lynetx/net/AsyncSocket.cpp" "/Users/xudeng/ClionProjects/lynetx/cmake/net/CMakeFiles/net.dir/AsyncSocket.cpp.o"
-  "/Users/xudeng/ClionProjects/lynetx/net/EpollService.cpp" "/Users/xudeng/ClionProjects/lynetx/cmake/net/CMakeFiles/net.dir/EpollService.cpp.o"
+  "/Users/xudeng/ClionProjects/lynetx/main.cpp" "/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles/main.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../base"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/xudeng/ClionProjects/lynetx/cmake/base/CMakeFiles/base.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

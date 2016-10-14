@@ -1,5 +1,6 @@
 /Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles/edit_cache.dir
 /Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles/rebuild_cache.dir
+/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles/main.dir
 /Users/xudeng/ClionProjects/lynetx/cmake/base/CMakeFiles/edit_cache.dir
 /Users/xudeng/ClionProjects/lynetx/cmake/base/CMakeFiles/rebuild_cache.dir
 /Users/xudeng/ClionProjects/lynetx/cmake/base/CMakeFiles/base.dir

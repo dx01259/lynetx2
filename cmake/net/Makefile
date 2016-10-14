@@ -152,6 +152,33 @@ AsyncSocket.cpp.s:
 	cd /Users/xudeng/ClionProjects/lynetx/cmake && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/AsyncSocket.cpp.s
 .PHONY : AsyncSocket.cpp.s
 
+EpollService.o: EpollService.cpp.o
+
+.PHONY : EpollService.o
+
+# target to build an object file
+EpollService.cpp.o:
+	cd /Users/xudeng/ClionProjects/lynetx/cmake && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollService.cpp.o
+.PHONY : EpollService.cpp.o
+
+EpollService.i: EpollService.cpp.i
+
+.PHONY : EpollService.i
+
+# target to preprocess a source file
+EpollService.cpp.i:
+	cd /Users/xudeng/ClionProjects/lynetx/cmake && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollService.cpp.i
+.PHONY : EpollService.cpp.i
+
+EpollService.s: EpollService.cpp.s
+
+.PHONY : EpollService.s
+
+# target to generate assembly for a file
+EpollService.cpp.s:
+	cd /Users/xudeng/ClionProjects/lynetx/cmake && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollService.cpp.s
+.PHONY : EpollService.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +191,9 @@ help:
 	@echo "... AsyncSocket.o"
 	@echo "... AsyncSocket.i"
 	@echo "... AsyncSocket.s"
+	@echo "... EpollService.o"
+	@echo "... EpollService.i"
+	@echo "... EpollService.s"
 .PHONY : help
 
 

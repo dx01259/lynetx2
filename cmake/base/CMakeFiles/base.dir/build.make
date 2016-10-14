@@ -153,12 +153,112 @@ base/CMakeFiles/base.dir/UtilXml.cpp.o.provides: base/CMakeFiles/base.dir/UtilXm
 base/CMakeFiles/base.dir/UtilXml.cpp.o.provides.build: base/CMakeFiles/base.dir/UtilXml.cpp.o
 
 
+base/CMakeFiles/base.dir/ThreadPool.cpp.o: base/CMakeFiles/base.dir/flags.make
+base/CMakeFiles/base.dir/ThreadPool.cpp.o: ../base/ThreadPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/base.dir/ThreadPool.cpp.o"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/ThreadPool.cpp.o -c /Users/xudeng/ClionProjects/lynetx/base/ThreadPool.cpp
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/ThreadPool.cpp.i"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xudeng/ClionProjects/lynetx/base/ThreadPool.cpp > CMakeFiles/base.dir/ThreadPool.cpp.i
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/ThreadPool.cpp.s"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xudeng/ClionProjects/lynetx/base/ThreadPool.cpp -o CMakeFiles/base.dir/ThreadPool.cpp.s
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/base.dir/ThreadPool.cpp.o.requires
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.o.provides: base/CMakeFiles/base.dir/ThreadPool.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/base.dir/build.make base/CMakeFiles/base.dir/ThreadPool.cpp.o.provides.build
+.PHONY : base/CMakeFiles/base.dir/ThreadPool.cpp.o.provides
+
+base/CMakeFiles/base.dir/ThreadPool.cpp.o.provides.build: base/CMakeFiles/base.dir/ThreadPool.cpp.o
+
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: base/CMakeFiles/base.dir/flags.make
+base/CMakeFiles/base.dir/BaseFunc.cpp.o: ../base/BaseFunc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object base/CMakeFiles/base.dir/BaseFunc.cpp.o"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/BaseFunc.cpp.o -c /Users/xudeng/ClionProjects/lynetx/base/BaseFunc.cpp
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/BaseFunc.cpp.i"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xudeng/ClionProjects/lynetx/base/BaseFunc.cpp > CMakeFiles/base.dir/BaseFunc.cpp.i
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/BaseFunc.cpp.s"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xudeng/ClionProjects/lynetx/base/BaseFunc.cpp -o CMakeFiles/base.dir/BaseFunc.cpp.s
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/base.dir/BaseFunc.cpp.o.requires
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.o.provides: base/CMakeFiles/base.dir/BaseFunc.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/base.dir/build.make base/CMakeFiles/base.dir/BaseFunc.cpp.o.provides.build
+.PHONY : base/CMakeFiles/base.dir/BaseFunc.cpp.o.provides
+
+base/CMakeFiles/base.dir/BaseFunc.cpp.o.provides.build: base/CMakeFiles/base.dir/BaseFunc.cpp.o
+
+
+base/CMakeFiles/base.dir/BaseTime.cpp.o: base/CMakeFiles/base.dir/flags.make
+base/CMakeFiles/base.dir/BaseTime.cpp.o: ../base/BaseTime.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object base/CMakeFiles/base.dir/BaseTime.cpp.o"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/BaseTime.cpp.o -c /Users/xudeng/ClionProjects/lynetx/base/BaseTime.cpp
+
+base/CMakeFiles/base.dir/BaseTime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/BaseTime.cpp.i"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xudeng/ClionProjects/lynetx/base/BaseTime.cpp > CMakeFiles/base.dir/BaseTime.cpp.i
+
+base/CMakeFiles/base.dir/BaseTime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/BaseTime.cpp.s"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xudeng/ClionProjects/lynetx/base/BaseTime.cpp -o CMakeFiles/base.dir/BaseTime.cpp.s
+
+base/CMakeFiles/base.dir/BaseTime.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/base.dir/BaseTime.cpp.o.requires
+
+base/CMakeFiles/base.dir/BaseTime.cpp.o.provides: base/CMakeFiles/base.dir/BaseTime.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/base.dir/build.make base/CMakeFiles/base.dir/BaseTime.cpp.o.provides.build
+.PHONY : base/CMakeFiles/base.dir/BaseTime.cpp.o.provides
+
+base/CMakeFiles/base.dir/BaseTime.cpp.o.provides.build: base/CMakeFiles/base.dir/BaseTime.cpp.o
+
+
+base/CMakeFiles/base.dir/Object.cpp.o: base/CMakeFiles/base.dir/flags.make
+base/CMakeFiles/base.dir/Object.cpp.o: ../base/Object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object base/CMakeFiles/base.dir/Object.cpp.o"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/base.dir/Object.cpp.o -c /Users/xudeng/ClionProjects/lynetx/base/Object.cpp
+
+base/CMakeFiles/base.dir/Object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base.dir/Object.cpp.i"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xudeng/ClionProjects/lynetx/base/Object.cpp > CMakeFiles/base.dir/Object.cpp.i
+
+base/CMakeFiles/base.dir/Object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base.dir/Object.cpp.s"
+	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xudeng/ClionProjects/lynetx/base/Object.cpp -o CMakeFiles/base.dir/Object.cpp.s
+
+base/CMakeFiles/base.dir/Object.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/base.dir/Object.cpp.o.requires
+
+base/CMakeFiles/base.dir/Object.cpp.o.provides: base/CMakeFiles/base.dir/Object.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/base.dir/build.make base/CMakeFiles/base.dir/Object.cpp.o.provides.build
+.PHONY : base/CMakeFiles/base.dir/Object.cpp.o.provides
+
+base/CMakeFiles/base.dir/Object.cpp.o.provides.build: base/CMakeFiles/base.dir/Object.cpp.o
+
+
 # Object files for target base
 base_OBJECTS = \
 "CMakeFiles/base.dir/Socket.cpp.o" \
 "CMakeFiles/base.dir/BaseException.cpp.o" \
 "CMakeFiles/base.dir/BServerPkg.cpp.o" \
-"CMakeFiles/base.dir/UtilXml.cpp.o"
+"CMakeFiles/base.dir/UtilXml.cpp.o" \
+"CMakeFiles/base.dir/ThreadPool.cpp.o" \
+"CMakeFiles/base.dir/BaseFunc.cpp.o" \
+"CMakeFiles/base.dir/BaseTime.cpp.o" \
+"CMakeFiles/base.dir/Object.cpp.o"
 
 # External object files for target base
 base_EXTERNAL_OBJECTS =
@@ -167,9 +267,13 @@ lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/Socket.cpp.o
 lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/BaseException.cpp.o
 lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/BServerPkg.cpp.o
 lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/UtilXml.cpp.o
+lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/ThreadPool.cpp.o
+lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/BaseFunc.cpp.o
+lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/BaseTime.cpp.o
+lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/Object.cpp.o
 lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/build.make
 lynetx/lib/libbase.dylib: base/CMakeFiles/base.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library ../lynetx/lib/libbase.dylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xudeng/ClionProjects/lynetx/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../lynetx/lib/libbase.dylib"
 	cd /Users/xudeng/ClionProjects/lynetx/cmake/base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/base.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -181,6 +285,10 @@ base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/Socket.cpp.o.require
 base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/BaseException.cpp.o.requires
 base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/BServerPkg.cpp.o.requires
 base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/UtilXml.cpp.o.requires
+base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/ThreadPool.cpp.o.requires
+base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/BaseFunc.cpp.o.requires
+base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/BaseTime.cpp.o.requires
+base/CMakeFiles/base.dir/requires: base/CMakeFiles/base.dir/Object.cpp.o.requires
 
 .PHONY : base/CMakeFiles/base.dir/requires
 
