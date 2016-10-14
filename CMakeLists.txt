@@ -37,8 +37,15 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lynetx/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lynetx/lib)
 
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
+LINK_DIRECTORIES(/usr/local/lib)
 
 add_subdirectory(base)
 add_subdirectory(lib)
 add_subdirectory(log)
 add_subdirectory(net)
+
+#暂时添加测试
+set(mainSRC
+        main.cpp)
+
+add_executable(main ${mainSRC})
