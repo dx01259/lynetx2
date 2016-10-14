@@ -1,0 +1,8 @@
+//
+// Created by DengXu on 2016/10/12.
+//
+
+#ifndef LYNETX_THREADFACTORY_H
+#define LYNETX_THREADFACTORY_H
+
+#endif //LYNETX_THREADFACTORY_H
