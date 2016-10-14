@@ -14,6 +14,7 @@ namespace lynetx {
      */
     class AsyncSocket : public Socket
     {
+    public:
         /**
          * 初始化异步套接字对象
          * @return
