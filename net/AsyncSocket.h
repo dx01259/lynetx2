@@ -37,6 +37,12 @@ namespace lynetx {
          * @return 设置成功返回套接字FD，失败返回-1，并且设置errno参数
          */
         int SetAsyncSocket();
+
+        /**
+         * 获取套接字对象FD
+         * @return 返回套接字对象FD
+         */
+        inline int GetAsyncSocket(){ return this->m_socketfd; }
     };
 }
 
