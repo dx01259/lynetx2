@@ -10,9 +10,7 @@ SET(base_SRC
         Timeout.cpp
         ThreadFactory.cpp
         TMap.cpp
-        Mutex.cpp
-        EpollObject.cpp
-        MsgDeque.cpp)
+        Mutex.cpp)
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/open/tinyxml2-4.0.1)
 INCLUDE_DIRECTORIES(/usr/local/include)
@@ -35,6 +33,4 @@ SET(HEADERS
         Timeout.h
         ThreadFactory.h
         TMap.h
-        Mutex.h
-        EpollObject.h
-        MsgDeque.h)
+        Mutex.h)

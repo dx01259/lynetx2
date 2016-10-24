@@ -1,5 +1,6 @@
 //
 // Created by DengXu on 2016/10/13.
+// 此类是线程安全的
 //
 
 #ifndef LYNETX_TMAP_H

@@ -65,7 +65,7 @@ namespace lynetx{
         return uptime;
     }
 
-    bool Timeout::TimeofNowTime(struct timespec &spec, const unsigned long &minisec)
+    bool Timeout::SetTimespecLeftNow(struct timespec &spec, const unsigned long &minisec)
     {
         struct timeval val;
         int ret = gettimeofday(&val, NULL);
@@ -78,5 +78,14 @@ namespace lynetx{
         spec.tv_sec += (spec.tv_nsec/(1000000000));
         spec.tv_nsec %=1000000000;
         return 0==ret ? true:false;
+    }
+
+    struct timespec *Timeout::GetLocalTimespec()
+    {
+        struct timeval val;
+        gettimeofday(&val, NULL);
+        m_spec.tv_sec = val.tv_sec;
+        m_spec.tv_nsec = val.tv_usec*1000;
+        return &m_spec;
     }
 }

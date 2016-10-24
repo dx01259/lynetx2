@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <zconf.h>
 #include <assert.h>
+#include <limits.h>
 
 namespace lynetx {
 
@@ -49,6 +50,24 @@ namespace lynetx {
             throw BaseException(strerror(errno));
         }
         return this->m_socketfd;
+    }
+
+    int Socket::Listen(int backlog)
+    {
+        int ret = listen(this->m_socketfd, backlog);
+        if(-1 == ret){
+            throw BaseException(strerror(errno));
+        }
+        return 0;
+    }
+
+    int Socket::Accept(struct sockaddr *address, socklen_t *length)
+    {
+        int sockfd = accept(this->m_socketfd, address, length);
+        if (-1 == sockfd){
+            throw BaseException(strerror(errno));
+        }
+        return sockfd;
     }
 
     ssize_t Socket::RecvPacket(BServerPkg *bServerPkg, int flags,

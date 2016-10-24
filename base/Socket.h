@@ -39,6 +39,21 @@ namespace lynetx {
         int InitSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException);
 
         /**
+         * 监听套接字，只是简单的封装了下listen函数
+         * @param backlog 已经完成队列的最大个数
+         * @return 成功返回0，失败返回-1
+         */
+        int Listen(int backlog) throw(BaseException);
+
+        /**
+         * 三次握手之后，从完成队列中获取建立链接的套接字
+         * @param address 建立连接的套接字地址
+         * @param length 建立连接的套接字地址的长度
+         * @return 成功返回建立连接的套接字ID，失败返回-1
+         */
+        int Accept(struct sockaddr *address, socklen_t *length) throw(BaseException);
+
+        /**
          * 接收套接字发送过来的数据，包括任何其他协议类型的数据。例如TCP数据和UDP数据
          * @param bServerPkg 接收的数据包对象，保存数据体等相关信息。
          * @param flags 此参数可以通过man recv查看对应的介绍。

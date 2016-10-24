@@ -1,0 +1,8 @@
+//
+// Created by DengXu on 2016/10/14.
+//
+
+#ifndef LYNETX_LOGGERMANAGER_H
+#define LYNETX_LOGGERMANAGER_H
+
+#endif //LYNETX_LOGGERMANAGER_H

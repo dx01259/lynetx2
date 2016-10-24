@@ -56,5 +56,6 @@ do{\
 	}\
 }while(0)
 
+typedef void (*callback_func)(void *);
 
 #endif //LYNETX_DEFINE_H

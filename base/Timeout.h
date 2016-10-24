@@ -74,12 +74,19 @@ namespace lynetx {
          * @param minisec 需要累加的时间值，单位是微秒
          * @return 成功返回true，否则返回false
          */
-        static bool TimeofNowTime(struct timespec &spec, const unsigned long &minisec);
+        static bool SetTimespecLeftNow(struct timespec &spec, const unsigned long &minisec);
+
+        /**
+         * 返回当前时间对象
+         * @return 获取当前时间，返回timespec对象
+         */
+        struct timespec *GetLocalTimespec();
 
     protected:
         bool  m_started;
         unsigned long m_startTime;
         unsigned long m_timeout;
+        struct timespec m_spec;
     };
 }
 #endif //LYNETX_TIMEOUT_H
