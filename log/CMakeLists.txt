@@ -1,36 +1,10 @@
-SET(base_SRC
-        Socket.cpp
-        BaseException.cpp
-        BServerPkg.cpp
-        UtilXml.cpp
-        ThreadPool.cpp
-        BaseFunc.cpp
-        BaseTime.cpp
-        Object.cpp
-        Timeout.cpp
-        ThreadFactory.cpp
-        TMap.cpp
-        Mutex.cpp)
-
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/open/tinyxml2-4.0.1)
-INCLUDE_DIRECTORIES(/usr/local/include)
+SET(log_SRC
+        LoggerManager.cpp
+        Logger.cpp)
 
 SET(CMAKE_CXX_COMPILER "g++")
-ADD_LIBRARY(base SHARED ${base_SRC})
-TARGET_LINK_LIBRARIES(base tinyxml2)
+ADD_LIBRARY(log SHARED ${log_SRC})
 
 SET(HEADERS
-        Socket.h
-        BaseException.h
-        BServerPkg.h
-        config.h
-        UtilXml.h
-        ThreadPool.h
-        BaseFunc.h
-        BaseTime.h
-        Object.h
-        define.h
-        Timeout.h
-        ThreadFactory.h
-        TMap.h
-        Mutex.h)
+        LoggerManager.h
+        Logger.h)

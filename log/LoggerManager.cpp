@@ -3,3 +3,7 @@
 //
 
 #include "LoggerManager.h"
+
+namespace lynetx {
+
+}
