@@ -32,4 +32,19 @@ namespace lynetx {
 
         return threadObject;
     }
+
+    bool ThreadFactory::DestroyThreadObject(const ThreadObject *object, const useconds_t us)
+    {
+        if (object)
+        {
+            if(object->status != RUNNING)
+            {
+                pthread_cancel(object->id);
+            } else {
+                usleep(us);
+                pthread_cancel(object->id);
+            }
+        }
+        return false;
+    }
 }

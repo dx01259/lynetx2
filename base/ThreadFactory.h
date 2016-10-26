@@ -80,6 +80,8 @@ do{\
                 void *object, pthread_func callFunc, Timeout keepAliveTime,
                 THREAD_STATUS status, pthread_func pthreadFunc, void *param);
 
+		bool DestroyThreadObject(const ThreadObject *object, const useconds_t us);
+
     private:
         pthread_attr_t m_attr;
     };

@@ -40,7 +40,7 @@ namespace lynetx {
             {
                 //添加此if判断是因为，线程在调用的时候，无法保证是主线程还是
                 //子线程先运行，所以就无法保证线程池对象中已经保存子线程对象
-                sleep(1);   //单位是秒
+                usleep(100000);   //单位是微秒
                 if (out.IsTimeout()) break;
             }
             else
