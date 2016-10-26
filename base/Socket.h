@@ -11,6 +11,8 @@
 
 namespace lynetx {
 
+    const int SOCK_MAX_CONN = 128;
+
     class Socket{
 
     public:
@@ -29,6 +31,8 @@ namespace lynetx {
          */
         Socket(int family, int type, int protocol);
 
+        virtual ~Socket();
+
         /**
          * 初始化对应的太接字，绑定IP和PORT
          * @param ip 套接字对应的IP地址信息，例如127.0.0.1
@@ -36,14 +40,14 @@ namespace lynetx {
          * @param port 套接字对应的PORT端口，例如8000
          * @return 返回创建的socket对象
          */
-        int InitSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException);
+        virtual int InitSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException);
 
         /**
          * 监听套接字，只是简单的封装了下listen函数
          * @param backlog 已经完成队列的最大个数
          * @return 成功返回0，失败返回-1
          */
-        int Listen(int backlog) throw(BaseException);
+        virtual int Listen(int backlog) throw(BaseException);
 
         /**
          * 三次握手之后，从完成队列中获取建立链接的套接字
@@ -51,7 +55,7 @@ namespace lynetx {
          * @param length 建立连接的套接字地址的长度
          * @return 成功返回建立连接的套接字ID，失败返回-1
          */
-        int Accept(struct sockaddr *address, socklen_t *length) throw(BaseException);
+        virtual int Accept(struct sockaddr *address, socklen_t *length) throw(BaseException);
 
         /**
          * 接收套接字发送过来的数据，包括任何其他协议类型的数据。例如TCP数据和UDP数据
@@ -59,7 +63,7 @@ namespace lynetx {
          * @param flags 此参数可以通过man recv查看对应的介绍。
          * @return 成功返回接收的数据的长度，失败返回-1，并且设置了errno变量的值。
          */
-        ssize_t RecvPacket(BServerPkg *bServerPkg, int flags, struct sockaddr *address) throw(BaseException);
+        virtual ssize_t RecvPacket(BServerPkg *bServerPkg, int flags, struct sockaddr *address) throw(BaseException);
 
         /**
          * 发送套接字数据，包括发送的套接字对象和其他类型的数据，例如TCP数据和UDP数据
@@ -67,13 +71,13 @@ namespace lynetx {
          * @param flags 此参数可以通过man send查看对应的介绍。
          * @return 成功返回发送的数据长度，失败返回-1，并且设置了errno变量的值。
          */
-        ssize_t SendPacket(const BServerPkg *bServerPkg, int flags, const struct sockaddr *address) throw(BaseException);
+        virtual ssize_t SendPacket(const BServerPkg *bServerPkg, int flags, const struct sockaddr *address) throw(BaseException);
 
         /**
          * 关闭创建的套接字
          * @return 成功返回true，失败返回false，并且设置errno
          */
-        bool CloseSocket();
+        virtual bool CloseSocket();
 
     protected:
         int m_socketfd;//套接字对象，用于发送数据

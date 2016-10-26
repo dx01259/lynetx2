@@ -12,18 +12,28 @@
 
 namespace lynetx {
 
-    Socket::Socket()
+    Socket::Socket():
+            m_socketfd(-1)
     {
         this->m_family   = AF_INET;
         this->m_type     = SOCK_STREAM;
         this->m_protocol = IPPROTO_TCP;
     }
 
-    Socket::Socket(int family, int type, int protocol)
+    Socket::Socket(int family, int type, int protocol):
+            m_socketfd(-1)
     {
         this->m_family = family;
         this->m_type = type;
         this->m_protocol = protocol;
+    }
+
+    Socket::~Socket()
+    {
+        if (m_socketfd != -1)
+        {
+            CloseSocket();
+        }
     }
 
     int Socket::InitSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException)
@@ -52,7 +62,7 @@ namespace lynetx {
         return this->m_socketfd;
     }
 
-    int Socket::Listen(int backlog)
+    int Socket::Listen(int backlog) throw(BaseException)
     {
         int ret = listen(this->m_socketfd, backlog);
         if(-1 == ret){
@@ -61,7 +71,7 @@ namespace lynetx {
         return 0;
     }
 
-    int Socket::Accept(struct sockaddr *address, socklen_t *length)
+    int Socket::Accept(struct sockaddr *address, socklen_t *length) throw(BaseException)
     {
         int sockfd = accept(this->m_socketfd, address, length);
         if (-1 == sockfd){
@@ -138,6 +148,7 @@ namespace lynetx {
     {
         if (this->m_socketfd >=0 && close(this->m_socketfd)>0)
         {
+            this->m_socketfd = -1;
             return true;
         }
 

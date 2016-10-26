@@ -118,7 +118,7 @@ namespace lynetx {
         void EpollWait();
 
     protected:
-        virtual void *HanderEvent(void *parameter);
+        virtual void *HanderEvent(void *parameter)=0;
     protected:
         int         m_epollfd;
         int         m_timeout;
