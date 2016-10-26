@@ -11,12 +11,11 @@ namespace lynetx {
 
     AsyncSocket::AsyncSocket():Socket()
     {
-        this->SetAsyncSocket();
+
     }
 
     AsyncSocket::AsyncSocket(int family, int type, int protocol) : Socket(family, type, protocol)
     {
-        this->SetAsyncSocket();
     }
 
     AsyncSocket::~AsyncSocket()
@@ -39,5 +38,10 @@ namespace lynetx {
             return this->m_socketfd;
         }
         return flags;
+    }
+
+    int AsyncSocket::InitAsyncSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException)
+    {
+        return  Socket::InitSocket(ip, isInaddrAny, port), SetAsyncSocket();
     }
 }

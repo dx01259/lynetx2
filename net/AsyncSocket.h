@@ -32,6 +32,16 @@ namespace lynetx {
 
         virtual ~AsyncSocket();
 
+    public:
+        /**
+         * 初始化对应的太接字，绑定IP和PORT，同时设置套接字为异步套接字
+         * @param ip 套接字对应的IP地址信息，例如127.0.0.1
+         * @param isInaddrAny 当isInaddrAny=true，表示IP填任何值都无效，否则设置对应的IP地址。
+         * @param port 套接字对应的PORT端口，例如8000
+         * @return 返回创建的socket对象
+         */
+        int InitAsyncSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException);
+
         /**
          * 将套接字设置为异步的
          * @return 设置成功返回套接字FD，失败返回-1，并且设置errno参数
