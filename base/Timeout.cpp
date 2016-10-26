@@ -65,12 +65,12 @@ namespace lynetx{
         return uptime;
     }
 
-    bool Timeout::SetTimespecLeftNow(struct timespec &spec, const unsigned long &minisec)
+    bool Timeout::SetTimespecLeftNow(struct timespec &spec, const unsigned long &millisecond)
     {
         struct timeval val;
         int ret = gettimeofday(&val, NULL);
-        spec.tv_sec = val.tv_sec+minisec/1000;
-        unsigned long minitmp = minisec % 1000;
+        spec.tv_sec = val.tv_sec+millisecond/1000;
+        unsigned long minitmp = millisecond % 1000;
         unsigned long usec = val.tv_usec + minitmp*1000;
         spec.tv_sec += usec/(1000000);
         usec %= 1000000;

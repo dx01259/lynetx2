@@ -9,11 +9,12 @@
 
 namespace lynetx {
 
+    //秒，毫秒，微秒，纳秒，皮秒
     class Timeout
     {
     public:
         /**
-         * 设置超时时间，单位是微秒
+         * 设置超时时间，单位是毫秒
          * @param to 多长时间之后超时
          * @return
          */
@@ -22,8 +23,8 @@ namespace lynetx {
 
     public:
         /**
-         * 设置超时时间，单位是微秒
-         * @param out 微秒数
+         * 设置超时时间，单位是毫秒
+         * @param out 毫秒数
          */
         void Init(const unsigned long out);
 
@@ -39,7 +40,7 @@ namespace lynetx {
         unsigned long Start();
 
         /**
-         * 设置超时的微秒数
+         * 设置超时的毫秒数
          * @param out
          */
         void SetTimeout(const unsigned long out);
@@ -69,12 +70,12 @@ namespace lynetx {
         unsigned long TimeGetTime() const;
 
         /**
-         * 将spec参数的时间值，累加minisec微秒数
+         * 将spec参数的时间值，累加minisec毫秒数
          * @param spec 需要变更的时间
-         * @param minisec 需要累加的时间值，单位是微秒
+         * @param minisec 需要累加的时间值，单位是毫秒
          * @return 成功返回true，否则返回false
          */
-        static bool SetTimespecLeftNow(struct timespec &spec, const unsigned long &minisec);
+        static bool SetTimespecLeftNow(struct timespec &spec, const unsigned long &millisecond);
 
         /**
          * 返回当前时间对象
