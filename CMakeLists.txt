@@ -30,8 +30,9 @@ set(CMAKE_CXX_COMPILER "g++")
 
 set(CMAKE_MACOSX_RPATH 0)
 
-set(CMAKE_CXX_FLAGS_DEBUG "-O0 ")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -Wall -g -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-fPIC -W -O2 -finline-limit=1000 -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall") 
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lynetx/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lynetx/lib)
@@ -43,9 +44,11 @@ add_subdirectory(base)
 add_subdirectory(lib)
 add_subdirectory(log)
 add_subdirectory(net)
+add_subdirectory(test)
 
-#暂时添加测试
-set(mainSRC
-        main.cpp)
+set(CMAKE_INSTALL_RPATH ${PROJECT_SOURCE_DIR}/cmake/lynetx/install)
 
-add_executable(main ${mainSRC})
+install(TARGETS
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
