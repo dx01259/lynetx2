@@ -50,6 +50,14 @@ namespace lynetx {
         virtual int Listen(int backlog) throw(BaseException);
 
         /**
+         * 连接服务器
+         * @param sockaddr 服务器的地址信息
+         * @param length 服务器的地址长度
+         * @return
+         */
+        virtual int Connect(const struct sockaddr *sockaddr, socklen_t length) throw(BaseException);
+
+        /**
          * 三次握手之后，从完成队列中获取建立链接的套接字
          * @param address 建立连接的套接字地址
          * @param length 建立连接的套接字地址的长度

@@ -5,7 +5,7 @@
 #ifndef LYNETX_UTILXML_H
 #define LYNETX_UTILXML_H
 
-#include "tinyxml2.h"
+#include "tinyxml2/tinyxml2.h"
 #include <stdio.h>
 #include <string>
 

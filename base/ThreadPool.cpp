@@ -7,9 +7,21 @@
 
 namespace lynetx {
 
+    ThreadPoolHandle::ThreadPoolHandle()
+    {
+    }
+
+    ThreadPoolHandle::~ThreadPoolHandle()
+    {
+    }
+
+    void ThreadPoolHandle::DestroyThreadPool()
+    {
+    }
+
     ThreadPool::ThreadPool(const int corePoolSize,
                            const int maxmunPoolSize,
-                           unsigned long keepAliveTime,
+                           const Timeout keepAliveTime,
                            void *object,
                            pthread_func callFunc)
     {
@@ -20,11 +32,27 @@ namespace lynetx {
             boost::shared_ptr<ThreadObject> threadObject = ThreadFactory::Instance()->CreateThreadObject(
                     object, callFunc, keepAliveTime, WAITING, ThreadPool::process, this);
             this->m_ThreadPool.set(threadObject->id, threadObject);
+            printf("thread of %u, the pool size is %d\n", threadObject->id, this->m_ThreadPool.size());
         }
     }
 
     ThreadPool::~ThreadPool()
-    { }
+    {
+        DestroyThreadPool();
+    }
+
+    void ThreadPool::DestroyThreadPool()
+    {
+        vector<boost::shared_ptr<ThreadObject> > vThreadPool;
+        this->m_ThreadPool.get_all_values(vThreadPool);
+        for (int i = 0; i < vThreadPool.size(); ++i)
+        {
+            boost::shared_ptr<ThreadObject> thread = vThreadPool[i];
+            ThreadFactory::Instance()->DestroyThreadObject(thread.get(), 0);
+            printf("DestroyThreadPool 线程%u 退出\n", thread.get()->id);
+        }
+        this->m_ThreadPool.clear();
+    }
 
     void *ThreadPool::process(void *param)
     {
@@ -34,6 +62,7 @@ namespace lynetx {
         cleanup_push_thread(ThreadPool::clear, pool);
         while (pool)
         {
+            printf("process %u\n", pthread_self());
             pthread_t id = pthread_self();
             boost::shared_ptr<ThreadObject> threadObject;
             if (0 != pool->m_ThreadPool.find(id, threadObject))
@@ -59,11 +88,13 @@ namespace lynetx {
 
     void ThreadPool::clear(void *param)
     {
+        printf("clear function\n");
         ThreadPool *pool = (ThreadPool *)param;
         if (pool)
         {
             map<pthread_t, boost::shared_ptr<ThreadObject> >::iterator iter;
             pool->m_ThreadPool.remove(pthread_self());
+            printf("clear 线程%u 退出\n", pthread_self());
         }
     }
 }

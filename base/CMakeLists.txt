@@ -14,8 +14,9 @@ SET(base_SRC
         EpollObject.cpp
         MsgDeque.cpp)
 
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/open/tinyxml2-4.0.1)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
 INCLUDE_DIRECTORIES(/usr/local/include)
+link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 SET(CMAKE_CXX_COMPILER "g++")
 ADD_LIBRARY(base SHARED ${base_SRC})

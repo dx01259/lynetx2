@@ -8,7 +8,6 @@
 #include <arpa/inet.h>
 #include <zconf.h>
 #include <assert.h>
-#include <limits.h>
 
 namespace lynetx {
 
@@ -71,6 +70,15 @@ namespace lynetx {
         return 0;
     }
 
+    int Socket::Connect(const struct sockaddr *sockaddr, socklen_t length) throw(BaseException)
+    {
+        int ret = connect(this->m_socketfd, sockaddr, length);
+        if (-1 == ret){
+            throw BaseException(strerror(errno));
+        }
+        return 0;
+    }
+
     int Socket::Accept(struct sockaddr *address, socklen_t *length) throw(BaseException)
     {
         int sockfd = accept(this->m_socketfd, address, length);
@@ -115,7 +123,7 @@ namespace lynetx {
     ssize_t Socket::SendPacket(const BServerPkg *bServerPkg, int flags,
                                const struct sockaddr *address) throw(BaseException)
     {
-        ssize_t sendlen = 0;
+        ssize_t sendlen = 0, sendedlen=0;
         if (NULL != bServerPkg)
         {
             switch (this->m_type)
@@ -123,14 +131,23 @@ namespace lynetx {
                 case SOCK_DGRAM:
                     {
                         socklen_t socklen = sizeof(sockaddr);
-                        sendlen = sendto(this->m_socketfd, bServerPkg->GetPackageData(),
-                                         bServerPkg->GetPackageLength(), flags, address, sendlen);
+                        do
+                        {
+                            sendlen = sendto(this->m_socketfd, bServerPkg->GetPackageData(),
+                                             bServerPkg->GetPackageLength(), flags, address, socklen);
+                            sendedlen += sendlen;
+
+                        }while (sendedlen < bServerPkg->GetPackageLength());
                     }
                     break;
                 case SOCK_STREAM:
                     {
-                        sendlen = send(this->m_socketfd, bServerPkg->GetPackageData(),
-                                       bServerPkg->GetPackageLength(), flags);
+                        do
+                        {
+                            sendlen = send(this->m_socketfd, bServerPkg->GetPackageData(),
+                                           bServerPkg->GetPackageLength(), flags);
+                            sendedlen += sendlen;
+                        }while (sendedlen < bServerPkg->GetPackageLength());
                     }
                     break;
                 default:

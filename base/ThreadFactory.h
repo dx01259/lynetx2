@@ -46,11 +46,11 @@ do{\
      */
     typedef struct THREAD_OBJECT
     {
-        pthread_t id;
-        void *object;
-        pthread_func callFunc;
-        THREAD_STATUS status;
-        Timeout keepAliveTime;
+        pthread_t id;				//线程的ID
+        void *object;				//传递给线程调用函数的句柄
+        pthread_func callFunc;		//线程的回调函数
+        THREAD_STATUS status;		//线程的运行状态
+        Timeout keepAliveTime;		//线程可以空闲滞留的时间，单位为毫秒
     }ThreadObject;
 
     class ThreadFactory

@@ -44,6 +44,7 @@ namespace lynetx {
                 usleep(us);
                 pthread_cancel(object->id);
             }
+            return true;
         }
         return false;
     }

@@ -49,8 +49,8 @@ namespace lynetx {
             }
             BaseTime baseTime;
             baseTime.SetCurrentTime();
-            m_semNotEmptyName = baseTime.ToString()+"NotEmpty";
-            m_semNotFullName  = baseTime.ToString()+"NotFull";
+            m_semNotEmptyName = baseTime.ToString()+"_NotEmpty";
+            m_semNotFullName  = baseTime.ToString()+"_NotFull";
 
             m_pNotEmpty = sem_open(m_semNotEmptyName.c_str(), O_CREAT);
             m_pNotFull = sem_open(m_semNotFullName.c_str(), O_CREAT);

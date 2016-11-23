@@ -13,7 +13,18 @@ using namespace std;
 
 namespace lynetx {
 
-    class ThreadPool
+    class ThreadPoolHandle
+    {
+    public:
+        ThreadPoolHandle();
+        virtual ~ThreadPoolHandle();
+
+    public:
+        virtual void DestroyThreadPool();
+    };
+
+    class ThreadPool :
+            public ThreadPoolHandle
     {
     public:
         /**
@@ -27,11 +38,17 @@ namespace lynetx {
          */
         ThreadPool(const int corePoolSize,
                    const int maxmunPoolSize,
-                   unsigned long keepAliveTime,
+                   const Timeout keepAliveTime,
                    void       *object,
                    pthread_func callFunc);
 
         virtual ~ThreadPool();
+
+    public:
+        /**
+         * 销毁线程，退出运行，同时清理线程池缓存m_ThreadPool信息
+         */
+        void DestroyThreadPool();
 
     protected:
         /**
@@ -51,8 +68,8 @@ namespace lynetx {
     protected:
         TMap<pthread_t, boost::shared_ptr<ThreadObject> > m_ThreadPool;
         pthread_attr_t m_attr;
-        short m_corePoolSize;
-        short m_maxmunPoolSize;
+        int m_corePoolSize;
+        int m_maxmunPoolSize;
     };
 }
 

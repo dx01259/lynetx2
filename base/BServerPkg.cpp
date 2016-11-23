@@ -3,7 +3,7 @@
 //
 
 #include "BServerPkg.h"
-
+#include <assert.h>
 
 namespace lynetx
 {
@@ -26,30 +26,41 @@ namespace lynetx
     BServerPkg::BServerPkg(const PACKAGE_TYPE pkgType,
               const PACKAGE_ENCODER encoder, const PACKAGE_HEAD *phead, const PACKAGE_BODY *pbody)
     {
+        assert(phead);
+        assert(pbody);
         this->m_pkgType = pkgType;
         this->m_encoder = encoder;
 
-        memcpy(this->m_phead, phead, sizeof(PACKAGE_HEAD));
+        memcpy(this->m_phead, phead, sizeof(*phead));
+        memcpy(this->m_pbody, pbody, sizeof(*pbody));
     }
 
-    void BServerPkg::SetPackageHead(const PACKAGE_HEAD *phead) {
+    BServerPkg::~BServerPkg()
+    {
 
     }
 
-    PACKAGE_HEAD *BServerPkg::GetPackageHead() {
+    void BServerPkg::SetPackageHead(const PACKAGE_HEAD *phead)
+    {
+        if (phead)
+        {
+            memcpy(this->m_phead, phead, sizeof(*phead));
+        }
+    }
+
+    PACKAGE_HEAD *BServerPkg::GetPackageHead()
+    {
         return NULL;
     }
 
-    void BServerPkg::SetPackageBody(const PACKAGE_BODY *pbody) {
+    void BServerPkg::SetPackageBody(const PACKAGE_BODY *pbody)
+    {
 
     }
 
-    PACKAGE_BODY *BServerPkg::GetPackageBody() {
+    PACKAGE_BODY *BServerPkg::GetPackageBody()
+    {
         return NULL;
-    }
-
-    BServerPkg::~BServerPkg() {
-
     }
 
     unsigned char *BServerPkg::GetPackageData() const

@@ -102,16 +102,18 @@ namespace lynetx {
                  m_time.tm_year+1900, m_time.tm_mon+1, m_time.tm_mday,
                  m_time.tm_hour, m_time.tm_min, m_time.tm_sec
         );
+        szResult.resize(19);
         return szResult;
     }
 
     string BaseTime::ToDayString()
     {
-        string szResult(12, 0);
+        string szResult(11, 0);
         snprintf(&szResult[0], 11,
                  "%04u-%02u-%02u",
                  m_time.tm_year+1900, m_time.tm_mon+1, m_time.tm_mday
         );
+        szResult.resize(10);
         return szResult;
     }
 }
