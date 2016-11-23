@@ -85,7 +85,7 @@ namespace lynetx {
 
     ssize_t Logger::LogPuts(const char *msg, const size_t length)
     {
-        printf("%s", msg);//暂时写成这个
+        printf("%s\n", msg);//暂时写成这个
         return length;
     }
 

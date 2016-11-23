@@ -30,7 +30,7 @@ namespace lynetx {
     protected:
         ssize_t LogDoit(const LOGGER_LEVEL level, const size_t length,
                         const char *fmt, va_list arg);
-        ssize_t LogPuts(const char *msg, const size_t length);
+        virtual ssize_t LogPuts(const char *msg, const size_t length);
     private:
         std::string m_logPath;
     };
