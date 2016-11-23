@@ -6,6 +6,7 @@
 #define LYNETX_ASYNCSOCKET_H
 
 #include "Socket.h"
+#include <netinet/in.h>
 
 namespace lynetx {
 
@@ -53,6 +54,8 @@ namespace lynetx {
          * @return 返回套接字对象FD
          */
         inline int GetAsyncSocket(){ return this->m_socketfd; }
+
+        void GetSockaddrByAddress(const char *ip, const int port, struct sockaddr_in *address);
     };
 }
 

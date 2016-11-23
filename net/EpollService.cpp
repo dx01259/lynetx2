@@ -10,36 +10,38 @@ namespace lynetx {
     EpollService::EpollService():
             m_isStarted(false)
     {
+        check_zero(EpollCreate());
     }
 
-    EpollService::EpollService(const AsyncSocket sock, const EpollEvent epollEvent):
+    EpollService::EpollService(const AsyncSocket sock):
             m_isStarted(false)
     {
         this->m_AsyncSocket = sock;
-        this->m_EpollEvent  = epollEvent;
+        check_zero(EpollCreate());
     }
 
-    void EpollService::SetAsyncSocket(const AsyncSocket sock)
+    EpollService::~EpollService()
     {
-        if(!this->m_isStarted){
-            this->m_AsyncSocket = sock;
-        } else {
-            LoggerManager::Instance()->GetSysLogger()->Sys(
-                    LOGGER_SYS, 120,"The EpollService object is running that can't set it.");
-        }
+
     }
 
-    bool EpollService::Start(const char *ip, const short port, pthread_func callFunc)
+    bool EpollService::Start(const char *ip, const short port, const int corePoolSize,
+                             const int maxmunPoolSize,const Timeout keepAliveTime)
     {
         if (NULL != ip)
         {
             try {
-                this->m_AsyncSocket.InitSocket(ip, true, port);
+                this->m_AsyncSocket.InitAsyncSocket(ip, true, port);
+                this->m_AsyncSocket.Listen(SOCK_MAX_CONN);
+                this->m_pThreadPoolHandle = boost::make_shared<ThreadPool>(corePoolSize, maxmunPoolSize,
+                                                                           keepAliveTime, this, CallFunc);
 
+                return true;
             }
             catch (BaseException baseException)
             {
-
+                string sMeesage = baseException.what();
+                LoggerManager::Instance()->GetSysLogger()->Error(LOGGER_ERR, sMeesage.size(), sMeesage.c_str());
             }
             catch (exception e)
             {
@@ -52,11 +54,35 @@ namespace lynetx {
 
     bool EpollService::Stop()
     {
+        this->m_pThreadPoolHandle->DestroyThreadPool();
         return false;
     }
 
-    void *EpollService::HanderEvent(void *parameter)
+    void *EpollService::CallFunc(void *parameter)
     {
-        return EpollObject::HanderEvent(parameter);
+        EpollService *service = (EpollService *)parameter;
+        if (service)
+        {
+            printf("CallFunc begin %u\n", pthread_self());
+            service->EpollWait();
+            printf("CallFunc end %u\n", pthread_self());
+        }
+        return NULL;
+    }
+
+    void *EpollService::HandleEvent(void *parameter)
+    {
+
+        return NULL;
+    }
+
+    size_t EpollService::Receive(unsigned char *data, size_t length)
+    {
+        return 0;
+    }
+
+    size_t EpollService::Send(const unsigned char *data, const size_t length)
+    {
+        return 0;
     }
 }

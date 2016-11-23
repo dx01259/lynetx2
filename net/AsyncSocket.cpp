@@ -6,6 +6,7 @@
 #include "config.h"
 #include <fcntl.h>
 #include <assert.h>
+#include <arpa/inet.h>
 
 namespace lynetx {
 
@@ -43,5 +44,16 @@ namespace lynetx {
     int AsyncSocket::InitAsyncSocket(const char *ip, bool isInaddrAny, const int port) throw(BaseException)
     {
         return  Socket::InitSocket(ip, isInaddrAny, port), SetAsyncSocket();
+    }
+
+    void AsyncSocket::GetSockaddrByAddress(const char *ip, const int port, struct sockaddr_in *address)
+    {
+        if (NULL != ip && NULL != address)
+        {
+            bzero(address, sizeof(struct sockaddr_in));
+            address->sin_family = this->m_family;
+            address->sin_port   = htons(port);
+            inet_pton(this->m_family, ip, &address->sin_addr.s_addr);
+        }
     }
 }
